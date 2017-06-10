@@ -822,6 +822,13 @@ function addMarkers(propiedades) {
             infowindow.open(map, marker);
             $("#house_description_"+index_id).show();
             $("#house_cards").hide();
+            //al dar click en el marker entra a detalle, debe cambiar a rojo y saltar estand oen detalle
+            for(var cont = 0 ; cont < allMarkers.length ; cont++){
+                allMarkers[cont].setAnimation(null);
+                allMarkers[cont].setIcon(markerBlue);
+            }            
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            marker.setIcon(markerRed);
             console.log("#house_description_"+index_id);
 
         });
@@ -916,7 +923,7 @@ function hover(id) {
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
             map.panTo(allMarkers[i].getPosition());
-            map.setZoom(17);
+            map.setZoom(11);
             break;
         }
     }
