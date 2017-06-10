@@ -974,6 +974,7 @@ function showPropiedades(latitude, longitude) {
 }
 
 function showPropiedadesBySearch() {
+    hideCurrentDescription();
     var total = 0;
     hideCajas("search");
     var primerMarerBusqueda = null;
@@ -997,6 +998,16 @@ function showPropiedadesBySearch() {
         $("#title-header").html("<h3>Por el momento no encontramos propiedades en esta ubicaciòn</h3>");
     }
 }
+
+function hideCurrentDescription(){
+    var descriptions = Array.from(document.querySelectorAll('*[id^="house_description_"]'));
+    descriptions.forEach(function (item) {
+        if($(item).is(":visible")){
+            $(item).hide();
+        }
+    });
+    $("#house_cards").show();
+}   
 
 /*
  * M}uestra las propiedades por filtro de ciudad/estado
