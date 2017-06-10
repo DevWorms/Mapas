@@ -984,8 +984,8 @@ function showPropiedadesBySearch() {
     if (total > 0) {
         $("#title-header").html("<h3>Encontramos " + total + " propiedades en " + $("#pac-input").val() + "</h3>");
         //ponemos le mapa en el primer marker de la busqueda y subimos el zoom
-        /*map.setCenter(primerMarerBusqueda.getPosition());
-        map.setZoom(11);*/
+        map.setCenter(primerMarerBusqueda.getPosition());
+        map.setZoom(10);
     } else {
         $("#title-header").html("<h3>Por el momento no encontramos propiedades en esta ubicaciòn</h3>");
     }
