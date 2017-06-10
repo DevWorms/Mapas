@@ -972,9 +972,15 @@ function showPropiedades(latitude, longitude) {
         }
     });
 }
-
+function setDefaulBehaviorMarhers(){
+    for(var cont = 0 ; cont < allMarkers.length ; cont++){
+                allMarkers[cont].setAnimation(null);
+                allMarkers[cont].setIcon(markerBlue);
+            }  
+}
 function showPropiedadesBySearch() {
     hideCurrentDescription();
+    setDefaulBehaviorMarhers();
     var total = 0;
     hideCajas("search");
     var primerMarerBusqueda = null;
