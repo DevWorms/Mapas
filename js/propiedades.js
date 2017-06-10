@@ -719,7 +719,6 @@ function load_propiedades(latitud, longitud) {
                     aiDi = aiDi.split("_");
                     $("#house_description_" + aiDi[1]).show();
                     $("#house_cards").hide();
-
                     getMarker(aiDi[1]);
                 });
             });
@@ -818,7 +817,7 @@ function addMarkers(propiedades) {
             others.forEach(function (item) {
               $(item).hide();
             });
-            map.setZoom(17);
+            map.setZoom(15);
             map.setCenter(marker.getPosition());
             infowindow.open(map, marker);
             $("#house_description_"+index_id).show();
@@ -831,12 +830,14 @@ function addMarkers(propiedades) {
             var marker_id = marker.id;
             var index_id =  marker_id.replace("marker", "");
 
+            //CENTRAR SCROLL
+            var casasContainer = $("#casas");
+            var casaScroll = $("#img-thumbnail_" + index_id);
+            casasContainer.animate({
+                scrollTop: casaScroll.offset().top - casasContainer.offset().top + casasContainer.scrollTop()
+            },'fast','linear');
+            //FIN CENTRAR SCROLL
             $("#img-thumbnail_" + index_id).css({
-                // "box-shadow": "0px 0px 0px 1px rgba(196,217,100,1)",
-                // "border-width": "0px",
-                // "font-size": "15px"
-                //"background": "rgba(196,217,100,1)"
-
                 "posistion":"relative",
                 "z-index":"1032",
                 "background":"rgba(16, 16, 16, 0.63)"
@@ -915,7 +916,7 @@ function hover(id) {
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
             map.panTo(allMarkers[i].getPosition());
-            map.setZoom(11);
+            map.setZoom(17);
             break;
         }
     }
@@ -968,19 +969,23 @@ function showPropiedades(latitude, longitude) {
 function showPropiedadesBySearch() {
     var total = 0;
     hideCajas("search");
-
+    var primerMarerBusqueda = null;
     for (var i = allMarkers.length, bounds = map.getBounds(); i--;) {
         if (bounds.contains(allMarkers[i].getPosition())) {
             total += 1;
             $("#caja_" + allMarkers[i].index).show();
-
-
-
+            // tomamos el primer marker de la busqueda
+            if(total == 1){
+                primerMarerBusqueda = allMarkers[i];
+            }
         }
     }
 
     if (total > 0) {
         $("#title-header").html("<h3>Encontramos " + total + " propiedades en " + $("#pac-input").val() + "</h3>");
+        //ponemos le mapa en el primer marker de la busqueda y subimos el zoom
+        /*map.setCenter(primerMarerBusqueda.getPosition());
+        map.setZoom(11);*/
     } else {
         $("#title-header").html("<h3>Por el momento no encontramos propiedades en esta ubicaciòn</h3>");
     }
