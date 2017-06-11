@@ -947,7 +947,7 @@ function getMarker(id) {
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
             map.panTo(allMarkers[i].getPosition());
-            map.setZoom(13);
+            map.setZoom(17);
             break;
         }
     }
@@ -963,7 +963,7 @@ function hover(id) {
             $("#markerLayer" + i).css("animation", "pulse .5s infinite alternate");
 
             map.panTo(allMarkers[i].getPosition());
-            map.setZoom(11);
+            map.setZoom(17);
             break;
         }
     }
