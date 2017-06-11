@@ -176,62 +176,57 @@ width: 280%;
 
 
 <div id="controls" style="background-color: #F6F6F6;">
-    <br>
-    <div class="row">
-      <div class="col-md-8 col-md-offset-2">
-          <div class="col-md-6">
-            <input id="pac-input" class="form-control controls" type="text" placeholder="Introduce una ciudad">
-          </div>
+  <br>
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="col-md-6">
+        <input id="pac-input" class="form-control controls" type="text" placeholder="Introduce una ciudad">
+      </div>
 
-          <div  class="col-md-3">
-            <div class="form-group">
-                <label class="sr-only" for="precio_minimo">Amount (in dollars)</label>
-                <div class="input-group">
-                    <div class="input-group-addon">$</div>
-                    <input type="number"
-                           onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
-                           class="form-control" id="precio_minimo" min="0" placeholder="Mìnimo">
-                    <div class="input-group-addon">.00</div>
-                </div>
-            </div>
-          </div>
-
-
-          <div  class="col-md-3">
-              <div class="form-group">
-                  <label class="sr-only" for="precio_maximo">Amount (in dollars)</label>
-                  <div class="input-group">
-                      <div class="input-group-addon">$</div>
-                      <input type="number"
-                             onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
-                             class="form-control" id="precio_maximo" min="0" placeholder="Máximo">
-                      <div class="input-group-addon">.00</div>
-                  </div>
-              </div>
+      <div  class="col-md-3">
+        <div class="form-group">
+          <label class="sr-only" for="precio_minimo">Amount (in dollars)</label>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <input type="number"
+                   onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
+                   class="form-control" id="precio_minimo" min="0" placeholder="Mìnimo">
+            <div class="input-group-addon">.00</div>
           </div>
         </div>
+      </div>
+      <div  class="col-md-3">
+        <div class="form-group">
+            <label class="sr-only" for="precio_maximo">Amount (in dollars)</label>
+            <div class="input-group">
+              <div class="input-group-addon">$</div>
+              <input type="number"
+                     onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')"
+                     class="form-control" id="precio_maximo" min="0" placeholder="Máximo">
+              <div class="input-group-addon">.00</div>
+            </div>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
 <br>
-<div class="row">
-  <div id="msg"></div>
- 
+<div class="container">
+  <div class="row" style=" margin-right: 0px;  margin-left: 0px;">
+    <div id="msg"></div>
+      <div class="col-md-6">
+          <div id="map">
+          </div>
+      </div>
 
-    <div class="col-md-6">
-        <div id="map">
-        </div>
-    </div>
-
-    <div class="col-md-6" id="house_cards">
-        <div id="title-header"></div>
-        <div class="scroll" id="casas">
-        </div>
-    </div>
-
-    <div id="description-casas"></div>
-
-  
+      <div class="col-md-6" id="house_cards">
+          <div id="title-header"></div>
+          <div class="scroll" id="casas">
+          </div>
+      </div>
+      <div id="description-casas"></div> 
+  </div>
 </div>
 
 <!-- MODAL  -->
