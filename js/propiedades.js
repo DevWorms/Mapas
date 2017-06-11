@@ -768,10 +768,10 @@ function load_propiedades(latitud, longitud) {
                 $(item).click(function () {
                     var aiDi = $(item).attr('id');
                     aiDi = aiDi.split("_");
-
                     $("#house_cards").show();
                     $("#house_description_" + aiDi[2]).hide();
-                    //reCentrar();
+                    setDefaulBehaviorMarkers();
+                    reCentrar();
                 });
             });
 
@@ -1012,7 +1012,7 @@ function showPropiedades(latitude, longitude) {
         }
     });
 }
-function setDefaulBehaviorMarhers(){
+function setDefaulBehaviorMarkers(){
     for(var cont = 0 ; cont < allMarkers.length ; cont++){
                 allMarkers[cont].setAnimation(null);
                 allMarkers[cont].setIcon(markerBlue);
@@ -1020,7 +1020,7 @@ function setDefaulBehaviorMarhers(){
 }
 function showPropiedadesBySearch() {
     hideCurrentDescription();
-    setDefaulBehaviorMarhers();
+    setDefaulBehaviorMarkers();
     var total = 0;
     hideCajas("search");
     var primerMarerBusqueda = null;
