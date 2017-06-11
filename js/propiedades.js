@@ -1029,17 +1029,17 @@ function showPropiedadesBySearch() {
             total += 1;
             $("#caja_" + allMarkers[i].index).show();
             // tomamos el primer marker de la busqueda
-            if(total == 1){
+            //if(total == 1){
                 primerMarerBusqueda = allMarkers[i];
-            }
+            //}
         }
     }
 
     if (total > 0) {
         $("#title-header").html("<p class='aviso'>Encontramos " + total + " propiedades en " + $("#pac-input").val() + "</p>");
-        //ponemos le mapa en el primer marker de la busqueda y subimos el zoom
+        //ponemos le mapa en el ultimo marker de la busqueda ya que es la primer tarjetay subimos el zoom
         map.setCenter(primerMarerBusqueda.getPosition());
-        map.setZoom(10);
+        map.setZoom(17);
     } else {
         $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades en esta ubicación</p>");
     }
