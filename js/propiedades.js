@@ -1001,7 +1001,7 @@ function showPropiedades(latitude, longitude) {
             if (response.propiedades.length > 0) {
                 $("#title-header").html("<p class='aviso'>Encontramos " + response.propiedades.length + " propiedades</p>");
             } else {
-                $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades en esta ubicaciòn</p>");
+                $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades en esta ubicación</p>");
             }
         },
         error: function (respuesta) {
@@ -1036,12 +1036,12 @@ function showPropiedadesBySearch() {
     }
 
     if (total > 0) {
-        $("#title-header").html("<h3>Encontramos " + total + " propiedades en " + $("#pac-input").val() + "</h3>");
+        $("#title-header").html("<p class='aviso'>Encontramos " + total + " propiedades en " + $("#pac-input").val() + "</p>");
         //ponemos le mapa en el primer marker de la busqueda y subimos el zoom
         map.setCenter(primerMarerBusqueda.getPosition());
         map.setZoom(10);
     } else {
-        $("#title-header").html("<h3>Por el momento no encontramos propiedades en esta ubicaciòn</h3>");
+        $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades en esta ubicación</p>");
     }
 }
 
@@ -1072,10 +1072,10 @@ function showPropiedadesByEstado(estado) {
         success: function (response) {
             if (response.propiedades.length > 0) {
                 var esta = $("#country option[value='" + estado + "']").text();
-                $("#title-header").html("<h3>Encontramos " + response.propiedades.length + " propiedades en el estado de " + esta + "</h3>");
+                $("#title-header").html("<p class='aviso'>Encontramos " + response.propiedades.length + " propiedades en el estado de " + esta + "</p>");
             } else {
                 var esta = $("#country option[value='" + estado + "']").text();
-                $("#title-header").html("<h3>Por el momento no encontramos propiedades en el estado de " + esta + "</h3>");
+                $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades en el estado de " + esta + "</p");
             }
             showOnlySomeCards(response.propiedades, "search");
         },
@@ -1113,28 +1113,28 @@ function showPropiedadesByPrecio(min, max) {
             success: function (response) {
                 if (response.propiedades.length > 0) {
                     if (min && max) {
-                        $("#title-header").html("<h3>Encontramos " + response.propiedades.length + " propiedades con un costo entre de $" + min + ".00 y $" + max + ".00</h3>");
+                        $("#title-header").html("<p class='aviso'>Encontramos " + response.propiedades.length + " propiedades con un costo entre de $" + min + ".00 y $" + max + ".00</p>");
                     }
 
                     if (min && ! max) {
-                        $("#title-header").html("<h3>Encontramos " + response.propiedades.length + " propiedades con un costo mayor a $" + min + ".00</h3>");
+                        $("#title-header").html("<p class='aviso'>Encontramos " + response.propiedades.length + " propiedades con un costo mayor a $" + min + ".00</p>");
                     }
 
                     if (max && !min) {
-                        $("#title-header").html("<h3>Encontramos " + response.propiedades.length + " propiedades con un costo menor a $" + max + ".00</h3>");
+                        $("#title-header").html("<p class='aviso'>Encontramos " + response.propiedades.length + " propiedades con un costo menor a $" + max + ".00</p>");
                     }
                 } else {
 
                     if (min && max) {
-                        $("#title-header").html("<h3>Por el momento no encontramos propiedades en el rango de $" + min + ".00 y $" + max + ".00</h3>");
+                        $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades en el rango de $" + min + ".00 y $" + max + ".00</p>");
                     }
 
                     if (min && ! max) {
-                        $("#title-header").html("<h3>Por el momento no encontramos propiedades con un costo mayor $" + min + ".00</h3>");
+                        $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades con un costo mayor $" + min + ".00</p>");
                     }
 
                     if (max && !min) {
-                        $("#title-header").html("<h3>Por el momento no encontramos propiedades con un costo menor $" + max + ".00</h3>");
+                        $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades con un costo menor $" + max + ".00</p>");
                     }
                 }
                 showOnlySomeCards(response.propiedades, "precio");

@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
 				"font",
 				"font-size"
 			],
@@ -54,10 +62,6 @@
 			[
 				"back",
 				"background-color"
-			],
-			[
-				"margin",
-				"margin-top"
 			],
 			[
 				"btn",
@@ -323,6 +327,42 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "mapas2.html",
+			"settings":
+			{
+				"buffer_size": 6863,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/propiedades.js",
+			"settings":
+			{
+				"buffer_size": 56518,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/desplegar.css",
+			"settings":
+			{
+				"buffer_size": 3449,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "prueba.html",
+			"settings":
+			{
+				"buffer_size": 2298,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -417,10 +457,13 @@
 	},
 	"expanded_folders":
 	[
-		"/C/wamp/www/Mapas"
+		"/C/wamp/www/Mapas",
+		"/C/wamp/www/Mapas/css",
+		"/C/wamp/www/Mapas/js"
 	],
 	"file_history":
 	[
+		"/C/wamp/www/Mapas/mapas",
 		"/C/wamp/www/PEPS/Admin/modificar-peps.php",
 		"/C/wamp/www/PEPS/Admin/modificar-listanegra.php",
 		"/C/wamp/www/PEPS/Admin/desplegar-info.php",
@@ -547,18 +590,18 @@
 		"/C/wamp/www/app-medica/index.html",
 		"/C/wamp/www/app-medica/css/login-style.css",
 		"/C/wamp/www/testmysql.php",
-		"/C/wamp/www/app-medica/login.php",
-		"/C/wamp/www/app-medica/.gitignore"
+		"/C/wamp/www/app-medica/login.php"
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 70.0
 	},
 	"find_in_files":
 	{
 		"height": 109.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -566,6 +609,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"pac-input",
+			"house_cards",
 			"col-md-2",
 			".png",
 			"img",
@@ -691,9 +736,7 @@
 			"Fecha",
 			"Junio",
 			"Loera",
-			"Guzmán",
-			"button",
-			"js"
+			"Guzmán"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -711,8 +754,133 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "mapas2.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6352,
+								6352
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2255.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/propiedades.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 56518,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								16428,
+								16428
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6998.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "css/desplegar.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3449,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								85,
+								85
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "prueba.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2298,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1786,
+								1786
+							]
+						],
+						"settings":
+						{
+							"color_scheme": "Packages/User/Color Highlighter/themes/Material-Theme-Darker.tmTheme",
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
 			]
 		}
 	],
