@@ -857,7 +857,7 @@ function addMarkers(propiedades) {
             others.forEach(function (item) {
               $(item).hide();
             });
-            map.setZoom(15);
+            map.setZoom(17);
             map.setCenter(marker.getPosition());
             infowindow.open(map, marker);
             $("#house_description_"+index_id).show();
