@@ -465,6 +465,46 @@ function load_propiedades(latitud, longitud) {
                     propiedad.index = index;
                     propiedades.push(propiedad);
 
+                    if (!propiedad.Construccion_m2__c) {
+                        propiedad.Construccion_m2__c = "";
+                    }
+
+                    if (!propiedad.Terreno_m2__c) {
+                        propiedad.Terreno_m2__c = "";
+                    }
+
+                    if (!propiedad.N_de_Habitaciones__c) {
+                        propiedad.N_de_Habitaciones__c = "";
+                    }
+
+                    if (!propiedad.N_de_Ba_os__c) {
+                        propiedad.N_de_Ba_os__c = "";
+                    }
+
+                    if (!propiedad.Patios__c) {
+                        propiedad.Patios__c = "";
+                    }
+
+                    if (!propiedad.Estacionamiento__c) {
+                        propiedad.Estacionamiento__c = "";
+                    }
+
+                    if (!propiedad.Municipio__c) {
+                        propiedad.Municipio__c = "";
+                    }
+
+                    if (!propiedad.Estado__c) {
+                        propiedad.Estado__c = "";
+                    }
+
+                    if (!propiedad.Calle__c) {
+                        propiedad.Calle__c = "";
+                    }
+
+                    if (!propiedad.Colonia__c) {
+                        propiedad.Colonia__c = "";
+                    }
+
                     var main_photo = "images/250x160.png";
                     if (!jQuery.isEmptyObject(propiedad.fotoPrincipal)) {
                         main_photo = propiedad.fotoPrincipal;
@@ -475,7 +515,7 @@ function load_propiedades(latitud, longitud) {
                     $("#casas").append(
                             '<div class="col-md-4 col-md-offset-1" id="caja_' + index + '">' +
                                 '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
-                                    '<img class="imagenres" alt="100%x200" data-src="holder.js/100%x200" src="' + main_photo + '" data-holder-rendered="true">' +
+                                    '<img class="imagenres" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="http://revimex.mx/' + main_photo + '" src="http://revimex.mx/' + main_photo + '" >' +
 
                                     '<div class="caption">' +
                                         '<p align="center">' +
@@ -1124,32 +1164,46 @@ function hideCajas(className) {
     });
 }
 
+function displayboxes(className) {
+    var others = Array.from(document.querySelectorAll('*[id^="caja_"]'));
+    others.forEach(function (item) {
+        if (!$(item).hasClass(className)) {
+            $(item).hide();
+        } else {
+            $(item).show();
+        }
+    });
+} 
+
 function showOnlySomeCards(propies, className=null) {
     hideCajas(className);
 
     for (var j = 0; j < propies.length; j++) {
-        for ( var i = 0; i < propiedades.length; i++) {
+        for ( var i = j; i < propiedades.length; i++) {
             var box = $("#caja_" + propiedades[i].index);
 
             if (box.hasClass("search") || box.hasClass("precio")) {
                 if (box.is(":visible")) {
                     if (propies[j].Id == propiedades[i].Id) {
+                        //box.show();
                         box.addClass(className);
                         break;
                     } else {
-                        box.hide();
+                        box.removeClass(className);
+                        //box.hide();
                     }
                 }
             } else {
                 if (propies[j].Id == propiedades[i].Id) {
-                    var box = $("#caja_" + propiedades[i].index);
-                    box.show();
+                    //box.show();
                     box.addClass(className);
                     break;
                 }
             }
         }
     }
+
+    displayboxes(className);
 }
 
 var delay = (function () {
