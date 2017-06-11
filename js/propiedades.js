@@ -1123,6 +1123,8 @@ function showPropiedadesByPrecio(min, max) {
                     if (max && !min) {
                         $("#title-header").html("<p class='aviso'>Encontramos " + response.propiedades.length + " propiedades con un costo menor a $" + max + ".00</p>");
                     }
+                    hideCurrentDescription();
+                    setDefaulBehaviorMarkers();
                 } else {
 
                     if (min && max) {
