@@ -1,8 +1,9 @@
 
     div.scroll {
-        width: 100%;
-        height: 600px;
-        overflow: scroll;
+        
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 
     .IconTarjeta {
@@ -14,8 +15,8 @@
     }
 
     #map {
-        height: 70%;
-        width: 140%;
+        height: 100%;
+        width: 100%;
     }
 
     .thumbnail {
@@ -54,10 +55,6 @@
     }
 
     div#house_description {
-        margin-left: 15%;
-    }
-
-    div#house_cards {
         margin-left: 15%;
     }
 

@@ -513,7 +513,7 @@ function load_propiedades(latitud, longitud) {
                     var re = /(?:\.([^.]+))?$/;
 
                     $("#casas").append(
-                            '<div class="col-md-4 col-md-offset-1" id="caja_' + index + '">' +
+                            '<div class="col-md-6" id="caja_' + index + '">' +
                                 '<div class="thumbnail" id="img-thumbnail_' + index + '">' +
                                     '<img class="imagenres" alt="' + propiedad.PrecioVenta__c + ' ' + propiedad.Estado__c + '" data-src="http://revimex.mx/' + main_photo + '" src="http://revimex.mx/' + main_photo + '" >' +
 

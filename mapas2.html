@@ -28,11 +28,6 @@
             background: rgba(255, 255, 255, .8) url('images/carga_v1.gif') 50% 50% no-repeat;
         }
 
-        div#casas {
-            width: 150%;
-        }
-
-
         .iloveit {
         }
 
@@ -55,11 +50,7 @@
             background-color: #C3D03C;
             color: white;
             padding: 5px 20px;
-
-            box-shadow: 2px 2px 2px #888888;
-            border-radius: 15px;
-            margin-left: 75px;
-            width: 100%;
+            border-radius: 15px;  
             margin-bottom: 2%;
         }
         .navbar-inverse {
@@ -71,20 +62,10 @@
             font-weight: bold;
             font-size: 15px;
           }
-           .thumbnail {
 
+           .thumbnail {
                border: 4px solid #46BEEF;
            }
-        #map {
-            width: 200% !important;
-            margin-left: -46%;
-        }
-         img.logo {
-           margin-left: 1%;
-         }
-         div#house_cards {
-         margin-left: 11% !important;
-         }
 
       .button_borde{
         text-decoration: none;
@@ -148,6 +129,7 @@
 .carousel, .item, .active {
     height: 36%;
 }
+
 textarea.input_borde{
 width: 280%;
     margin-left: -180%;
@@ -196,12 +178,12 @@ width: 280%;
 <div id="controls" style="background-color: #F6F6F6;">
     <br>
     <div class="row">
-      <div class="col-md-10 col-md-offset-2">
-          <div class="col-md-3">
+      <div class="col-md-8 col-md-offset-2">
+          <div class="col-md-6">
             <input id="pac-input" class="form-control controls" type="text" placeholder="Introduce una ciudad">
           </div>
 
-          <div  class="col-md-2">
+          <div  class="col-md-3">
             <div class="form-group">
                 <label class="sr-only" for="precio_minimo">Amount (in dollars)</label>
                 <div class="input-group">
@@ -215,7 +197,7 @@ width: 280%;
           </div>
 
 
-          <div  class="col-md-2">
+          <div  class="col-md-3">
               <div class="form-group">
                   <label class="sr-only" for="precio_maximo">Amount (in dollars)</label>
                   <div class="input-group">
@@ -231,26 +213,25 @@ width: 280%;
     </div>
 </div>
 
-
+<br>
 <div class="row">
-  <br><br>
   <div id="msg"></div>
-  <div class="col-md-12">
+ 
 
-    <div class="col-md-4">
+    <div class="col-md-6">
         <div id="map">
         </div>
     </div>
 
     <div class="col-md-6" id="house_cards">
         <div id="title-header"></div>
-        <div class="row scroll" id="casas">
+        <div class="scroll" id="casas">
         </div>
     </div>
 
     <div id="description-casas"></div>
 
-  </div>
+  
 </div>
 
 <!-- MODAL  -->
