@@ -960,6 +960,11 @@ function addMarkers(propiedades) {
                   "transform": "translate(-50%, -50%)",
 
             });
+
+            $("#img-thumbnail_" + index_id).css({
+                    "filter"    : "contrast(100%)",
+                    "opacity"    : "1"
+            });
         });
 
         google.maps.event.addListener(marker, "mouseover", function() {
@@ -969,12 +974,16 @@ function addMarkers(propiedades) {
             $("#letrasImagen" + index_id).css({
 
                     "opacity"    : "1",
-                    "color"      : "#cfd916",
+                    "color"      : "#fff",
                     "posistion":"relative",
                     "z-index":"1033"
-
-
                 });
+
+            $("#img-thumbnail_" + index_id).css({
+                    "filter"    : "contrast(200%)",
+                    "opacity"    : "0.7"
+            });
+
             });
 
         index += 1;
