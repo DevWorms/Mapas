@@ -357,7 +357,8 @@ function initMap() {
             window.alert("No existe el lugar: '" + place.name + "'");
             return;
         }
-
+        // obtenemos la ubicacion, si es torreon o gomez palacio el zoom sera menor
+        var ubicacion = place;
         // If the place has a geometry, then present it on a map.
         if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport);
@@ -367,7 +368,7 @@ function initMap() {
         }
 
         //showPropiedades(place.geometry.location.lat(), place.geometry.location.lng());
-        showPropiedadesBySearch();
+        showPropiedadesBySearch(ubicacion);
     });
 
     map.addListener('zoom_changed', function() {
@@ -1018,19 +1019,19 @@ function setDefaulBehaviorMarkers(){
                 allMarkers[cont].setIcon(markerBlue);
             }  
 }
-function showPropiedadesBySearch() {
+function showPropiedadesBySearch(ubicacion) {
     hideCurrentDescription();
     setDefaulBehaviorMarkers();
     var total = 0;
     hideCajas("search");
-    var primerMarerBusqueda = null;
+    var primerMarkerBusqueda = null;
     for (var i = allMarkers.length, bounds = map.getBounds(); i--;) {
         if (bounds.contains(allMarkers[i].getPosition())) {
             total += 1;
             $("#caja_" + allMarkers[i].index).show();
             // tomamos el primer marker de la busqueda
             //if(total == 1){
-                primerMarerBusqueda = allMarkers[i];
+                primerMarkerBusqueda = allMarkers[i];
             //}
         }
     }
@@ -1038,8 +1039,14 @@ function showPropiedadesBySearch() {
     if (total > 0) {
         $("#title-header").html("<p class='aviso'>Encontramos " + total + " propiedades en " + $("#pac-input").val() + "</p>");
         //ponemos le mapa en el ultimo marker de la busqueda ya que es la primer tarjetay subimos el zoom
-        map.setCenter(primerMarerBusqueda.getPosition());
-        map.setZoom(17);
+        map.setCenter(primerMarkerBusqueda.getPosition());
+        //caso para torreon y gomez palacio
+        if(ubicacion.place_id == "ChIJ-7NFu6nbj4YRHaCucJl6zIs" || ubicacion.place_id == "ChIJr9SXsc7Zj4YRzbjXdRQ7oUI"){
+            map.setZoom(13);
+        }else{
+            map.setZoom(17);
+        }
+        
     } else {
         $("#title-header").html("<p class='aviso'>Por el momento no encontramos propiedades en esta ubicación</p>");
     }
