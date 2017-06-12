@@ -521,8 +521,8 @@ function load_propiedades(latitud, longitud) {
                                     '<div class="caption">' +
                                         '<p align="center">' +
                                         '</p>' +
-                                        '<h3 style="opacity: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '">' + propiedad.Plaza__c +'<br>'+
-                                        '$ '+ propiedad.PrecioVenta__c +'</h3>'+
+                                        '<h2 style="opacity: 0; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);" id="letrasImagen' + index + '"><b>' + 
+                                        '$ '+ propiedad.PrecioVenta__c +'</b></h2>'+
 
                                     '</div>' +
                                 '</div>' +
