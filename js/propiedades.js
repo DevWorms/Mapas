@@ -634,7 +634,7 @@ function load_propiedades(latitud, longitud) {
                         '</div>' +
                         '<br><br>' +
                         '</div>' +
-                        '<div class="col-md-6">' +
+                        '<div class="col-md-6"><br>' +
                         '<p class="bg-primary" align="center">Casa</p>' +
                         '<b>Precio: </b> $' + propiedad.PrecioVenta__c +
                         '<br>' +
@@ -652,7 +652,7 @@ function load_propiedades(latitud, longitud) {
 
                         '<br><br>' +
                         '</div>' +
-                        '<div class="col-md-6" align="center">' +
+                        '<div class="col-md-6" align="center"><br>' +
                         '<p class="bg-primary">  Lugares cercanos </p>' +
                         '<br>' +
                         '<div class="row">' +
