@@ -58,20 +58,12 @@
         margin-left: 15%;
     }
 
-    #position_cosas {
-        margin-left: -10%;
-
-    }
-
     #promotor {
         width: 40%;
 
     }
 
-    p.bg-primary.hola {
-        padding-left: 44%;
-        margin-top: -3%;
-    }
+    
 
     p#info-pro {
         margin-top: -58%;
@@ -136,6 +128,9 @@
         background: #e7ad47;
     }
 
+    .revimexBlue {
+        color: #002E6D;
+    }
     .arenaClara {
         background: #FFD082;
     }
@@ -197,4 +192,9 @@
     font-size: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin: 0 0 0px;
+}
+
+.capitalize {
+    text-transform: uppercase;
 }

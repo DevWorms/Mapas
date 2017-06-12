@@ -528,9 +528,8 @@ function load_propiedades(latitud, longitud) {
                                 '</div>' +
                             '</div>');
 
-                    var modal_casa = '<div class="col-md-8" id="house_description_' + index + '" style="display: none">' +
-                        '<div class="col-md-3"></div>' +
-                        '<div class="col-md-9">' +
+                    var modal_casa = '<div class="col-md-6" id="house_description_' + index + '" style="display: none">' +
+                        
                         '<div class="col-md-12">' +
                         '<div id="myCarousel_' + index + '" class="carousel slide" data-ride="carousel">' +
 
@@ -621,111 +620,154 @@ function load_propiedades(latitud, longitud) {
 
 
                     modal_casa = modal_casa +
-                        '</div' +
+                        '</div>' +
                         '<!-- Left and right controls -->' +
-                        '<a class="left carousel-control" href="#myCarousel_' + index + '" data-slide="prev">' +
-                        '<span class="glyphicon glyphicon-chevron-left"></span>' +
-                        '<span class="sr-only">Anterior</span>' +
-                        '</a>' +
-                        '<a class="right carousel-control" href="#myCarousel_' + index + '" data-slide="next">' +
-                        '<span class="glyphicon glyphicon-chevron-right"></span>' +
-                        '<span class="sr-only">Siguiente</span>' +
-                        '</a>' +
-                        '</div>' +
-                        '<br><br>' +
-                        '</div>' +
-                        '<div class="col-md-6"><br>' +
-                        '<p class="bg-primary" align="center">Casa</p>' +
-                        '<b>Precio: </b> $' + propiedad.PrecioVenta__c +
-                        '<br>' +
-                        '<b>Superficie de Construcción: </b> ' + propiedad.Construccion_m2__c + ' m2<br>' +
-                        '<b>Direccion: </b></br>' + propiedad.Municipio__c + ', ' + propiedad.Estado__c + '<br> Calle: ' + propiedad.Calle__c +
-                        ', Colonia: ' + propiedad.Colonia__c +
-                        '<br>' +
-                        '<br>' +
-                        '<br>' +
-                        '<ul  id= "position_cosas">' +
-                        '<img height="40px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-habitaciones.png"><i class="numTarjeta"> ' + propiedad.N_de_Habitaciones__c + '</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                        '<img height="40px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-estacionamientos.png"><i class="numTarjeta"> ' + propiedad.Estacionamiento__c + '</i>  <br> <br>' +
-                        '<img height="40px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-banios.png"><i class="numTarjeta"> ' + propiedad.N_de_Ba_os__c + '</i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' +
-                        '</ul>' +
+                            '<a class="left carousel-control" href="#myCarousel_' + index + '" data-slide="prev">' +
+                            '<span class="glyphicon glyphicon-chevron-left"></span>' +
+                            '<span class="sr-only">Anterior</span>' +
+                            '</a>' +
 
-                        '<br><br>' +
-                        '</div>' +
-                        '<div class="col-md-6" align="center"><br>' +
-                        '<p class="bg-primary">  Lugares cercanos </p>' +
-                        '<br>' +
-                        '<div class="row">' +
-                        '<div class="col-md-3"></div>' +
-                        '<div class="col-md-1"><img height="50px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-restaurantes.png"><i class="numTarjeta"> 1 </i></div>' +
-                        '<div class="col-md-1"></div>' +
-                        '<div class="col-md-1"><img height="50px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-escuelas.png"><i class="numTarjeta"> 2 </i></div>' +
-                        '<div class="col-md-1"></div>' +
-                        '<div class="col-md-1"><img height="50px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-hospitales.png"><i class="numTarjeta"> 3 </i></div>' +
-                        '<div class="col-md-3"></div>' +
-                        '</div>' +
-                        '<div class="row">' +
-                        '<div class="col-md-3"></div>' +
-                        '<div class="col-md-1"><img height="50px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-c-comerciales.png"><i class="numTarjeta"> 4</i></div>' +
-                        '<div class="col-md-1"></div>' +
-                        '<div class="col-md-1"><img height="50px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-super.png"><i class="numTarjeta"> 5</i></div>' +
-                        '<div class="col-md-1"></div>' +
-                        '<div class="col-md-1"><img height="50px" class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-parques.png"><i class="numTarjeta"> 6</i></div>' +
-                        '<div class="col-md-3"></div>' +
+                            '<a class="right carousel-control" href="#myCarousel_' + index + '" data-slide="next">' +
+                            '<span class="glyphicon glyphicon-chevron-right"></span>' +
+                            '<span class="sr-only">Siguiente</span>' +
+                            '</a>' +
                         '</div>' +
                         '</div>' +
-                        '<button class ="boton_detalles_auto"  class="btn btn-primary" onclick="modal_variables(\'' +
-                        propiedad.Calle__c +
-                        '\', \'' + propiedad.Colonia__c +
-                        '\', \'' + propiedad.Municipio__c +
-                        '\', \'' + propiedad.Estado__c +
-                        '\', \'' + propiedad.Terreno_m2__c +
-                        '\', \'' + propiedad.Construccion_m2__c +
-                        '\', \'' + propiedad.N_de_Habitaciones__c +
-                        '\', \'' + propiedad.N_de_Ba_os__c +
-                        '\', \'' + propiedad.Patios__c +
-                        '\', \'' + propiedad.Estacionamiento__c +
-                        '\', \'' + propiedad.PrecioVenta__c +
-                        '\', \'' + main_photo +
-                        '\');" data-toggle="modal" data-target="#pdf-modal">Detalles</button>' +
 
-                        '<div class="col-md-12">' +
-                            '<p style="font-size: 15px">' +
-                            '<p class="bg-primary hola" >Gerente</p>' +
-                            '<div class="col-md-7 pos">' +
-                                '<p> Nombre: &nbsp;Lizbeth Ordonez' +
+
+                        // INFORMACION CASAS
+                        '<div class="row revimexBlue">' + 
+                            // Caracteristicas
+                            '<div class="col-md-6"><br>' +
+
+                                '<div class="row">' +
+                                    '<p class="bg-primary" align="center">Características</p>'+
+                                    '<ul>' +
+                                        '<li><b>Precio: </b> $' + propiedad.PrecioVenta__c + '</li>' +
+                                        
+                                        '<li><b>Construcción: </b> ' + propiedad.Construccion_m2__c + '&nbsp;m<sup>2</sup>' + '</li>' +
+                                        
+                                        '<li>' +
+                                            '<b>Dirección:</b><i class="capitalize">' + propiedad.Municipio__c + '&nbsp;' + propiedad.Estado__c + '<br>' + 
+                                                'Calle: ' + propiedad.Calle__c + '<br>' +
+                                                'Colonia: ' + propiedad.Colonia__c  + '<br>' +
+                                        '</i></li>' +
+                                    '</ul>' +
+                                '</div>' +
+
+                                '<div class="row" align="center">' +
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-habitaciones.png"><i class="numTarjeta"> ' + propiedad.N_de_Habitaciones__c + '</i>' +
+                                    '</div>' +
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-estacionamientos.png"><i class="numTarjeta"> ' + propiedad.Estacionamiento__c + '</i>  <br> <br>' +
+                                    '</div>' +
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-banios.png"><i class="numTarjeta"> ' + propiedad.N_de_Ba_os__c + '</i>' +
+                                    '</div>' +    
+                                '</div>' +
                                 '<br><br>' +
-                                '<b><i class="glyphicon glyphicon-phone-alt fa-1x" id="heart" aria-hidden="true"> 55512345</i></b>' +
-                                '<br><br>' +
-                                '<b><i class="glyphicon glyphicon-envelope fa-1x" id="heart" aria-hidden="true"> <a href="mailto:lizbeth.ordonez@revimex.mx">lizbeth.ordonez@revimex.mx</a></i></b>' +
-                                '<br><br>' +
-                                '<b><i class="glyphicon glyphicon-earphone fa-1x" id="heart" aria-hidden="true"> 55512345</i></b>' +
+                            '</div>' +
+
+                            // Lugares Cercanos
+                            '<div class="col-md-6" align="center"><br>' +
+                                '<p class="bg-primary">Lugares cercanos</p>' +
                                 '<br>' +
-                                '</p>' +
-                                '</p>' +
+                                '<div class="row" align="center">' +
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-restaurantes.png"><i class="numTarjeta">1</i>' +
+                                    '</div>' +
+
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-escuelas.png"><i class="numTarjeta">2</i>' +
+                                    '</div>' +
+
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-hospitales.png"><i class="numTarjeta">3</i>' +
+                                    '</div>' +
+                                '</div>' +
+                                '</br>' +
+                                '<div class="row" align="center">' +
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-c-comerciales.png"><i class="numTarjeta">4</i>' +
+                                    '</div>' +
+
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-super.png"><i class="numTarjeta">5</i>' +
+                                    '</div>' +
+
+                                    '<div class="col-md-4">' +
+                                        '<img class="img_borde" class="IconTarjeta" src="images/IconoTarjetaDinamica/ICONS-PROPIEDADES-WEB-parques.png"><i class="numTarjeta">6</i>' +
+                                    '</div>' +
+                                '</div>' +
                             '</div>' +
-                            '<div class="col-md-5 pos">' +
-                                '<form class="formulario">' +
-                                    '<input type="text" class="input_borde" class="form-control" id="form_nombre_'+ propiedad.Id +'" placeholder="Nombre" aria-describedby="sizing-addon2">' +
-                                    '<br></br>' +
-                                    '<input type="text" class="input_borde" class="form-control" id="form_telefono_'+ propiedad.Id +'" placeholder="Teléfono" aria-describedby="sizing-addon2">' +
-                                    '<br></br>' +
-                                    '<input type="text" class="input_borde" class="form-control" placeholder="Email" id="form_email_'+ propiedad.Id +'" aria-describedby="sizing-addon2">' +
-                                    '<br></br>' +
-                                    '<textarea class="input_borde" class="form-control" placeholder="Comentarios" id="form_mensaje_'+ propiedad.Id +'"></textarea><br>' +
-                                '</form>' +
+                        '</div>' +
+
+                        '<div class="row" align="center">' +
+                            '<div class="col-md-4 col-md-offset-4">' +
+                                '<button class="boton_detalles_auto"  class="btn btn-primary" onclick="modal_variables(\'' +
+                                propiedad.Calle__c +
+                                '\', \'' + propiedad.Colonia__c +
+                                '\', \'' + propiedad.Municipio__c +
+                                '\', \'' + propiedad.Estado__c +
+                                '\', \'' + propiedad.Terreno_m2__c +
+                                '\', \'' + propiedad.Construccion_m2__c +
+                                '\', \'' + propiedad.N_de_Habitaciones__c +
+                                '\', \'' + propiedad.N_de_Ba_os__c +
+                                '\', \'' + propiedad.Patios__c +
+                                '\', \'' + propiedad.Estacionamiento__c +
+                                '\', \'' + propiedad.PrecioVenta__c +
+                                '\', \'' + main_photo +
+                                '\');" data-toggle="modal" data-target="#pdf-modal">Detalles</button>' +
                             '</div>' +
                         '</div>' +
-                        '<div class="col-md-12">' +
-                            '<center><button type="button" onclick="sendMail(\'' + propiedad.Id + '\');" class ="button_borde" class="btn btn-primary btn-lg">Enviar</button></center>' +
+
+                        '</br></br>' +
+
+                        //SECCION GERENTE
+                        '<div class="row">' +
+                            '<div class="col-md-12">' +
+                                '<p class="bg-primary" align="center">Gerente</p>' +
+                                '<div class="row revimexBlue">' +
+                                    '<div class="col-md-7">' +
+                                        '<p  style="font-size: 15px;">' + 
+                                            '<b>Nombre:</b>&nbsp;Lizbeth Ordonez <br><br>' +
+                                            '<b><i class="glyphicon glyphicon-phone-alt fa-1x" id="heart" aria-hidden="true"></i>&nbsp; &nbsp;55 51 23 45</b><br><br>' +
+                                            '<b><i class="glyphicon glyphicon-envelope fa-1x" id="heart" aria-hidden="true"></i>&nbsp; &nbsp;<a href="mailto:lizbeth.ordonez@revimex.mx">lizbeth.ordonez@revimex.mx</a></b><br><br>' +
+                                            '<b><i class="glyphicon glyphicon-earphone fa-1x" id="heart" aria-hidden="true"></i>&nbsp; &nbsp;55 51 23 45</b><br><br>' +
+                                        '</p>' +
+                                    '</div>' +
+
+                                    '<div class="col-md-5">' +
+                                        '<form>' +
+                                            '<div class="form-group">' +
+                                                '<br>' +
+                                                '<input type="text" class="input_borde" class="form-control" id="form_nombre_'+ propiedad.Id +'" placeholder="Nombre" aria-describedby="sizing-addon2">' +
+                                                '<br></br>' +
+                                                '<input type="text" class="input_borde" class="form-control" id="form_telefono_'+ propiedad.Id +'" placeholder="Teléfono" aria-describedby="sizing-addon2">' +
+                                                '<br></br>' +
+                                                '<input type="text" class="input_borde" class="form-control" placeholder="E-mail" id="form_email_'+ propiedad.Id +'" aria-describedby="sizing-addon2">' +
+                                                '<br></br>' +
+                                                '<textarea class="input_borde" class="form-control" placeholder="Comentarios" id="form_mensaje_'+ propiedad.Id +'"></textarea><br>' +
+                                            '</div>' +
+                                        '</form>' +
+                                    '</div>' +
+                                '</div>' +
+                                '<br>' + 
+                            '</div>' +
                         '</div>' +
+
+                        '<div class="row" align="center">' +
+                            '<div class="col-md-4 col-md-offset-4">' +
+                                '<button type="button" onclick="sendMail(\'' + propiedad.Id + '\');" class ="boton_detalles_auto" class="btn btn-primary">Enviar</button>' +
+                            '</div>' +
                         '</div>' +
-                        '</div>';
+
+                        '</br>';
+
+
 
                     $("#description-casas").append(modal_casa);
-
-
-
 
                     index = index + 1;
 
@@ -1037,7 +1079,7 @@ function showPropiedadesBySearch(ubicacion) {
     }
 
     if (total > 0) {
-        $("#title-header").html("<p class='aviso'>Encontramos " + total + " propiedades en " + $("#pac-input").val() + "</p>");
+        $("#title-header").html("<p class='aviso animated fadeInRight'>Encontramos " + total + " propiedades en " + $("#pac-input").val() + "</p>");
         //ponemos le mapa en el ultimo marker de la busqueda ya que es la primer tarjetay subimos el zoom
         map.setCenter(primerMarkerBusqueda.getPosition());
         //caso para torreon y gomez palacio

@@ -1373,6 +1373,9 @@ a.text-danger:focus {
 .bg-primary {
   color: #fff;
   background-color: #002967;
+  height: 35px;
+  font-size: 16px;
+  padding-top: 6px;
 }
 a.bg-primary:hover,
 a.bg-primary:focus {
